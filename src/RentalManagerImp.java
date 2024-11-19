@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public class RentalManagerImp implements RentalManager{
     private List<RentalAgreement> rentalAgreements = new ArrayList<>();
@@ -11,16 +8,19 @@ public class RentalManagerImp implements RentalManager{
     private List<ResidentialProperty> residentialProperties = new ArrayList<>();
     private List<CommercialProperty> commercialProperties = new ArrayList<>();
 
+
     public void addAgreement(RentalAgreement agreement) {
         rentalAgreements.add(agreement);
-    };
+    }
+
     public void updateAgreement(int agreementId, Tenant mainTenant, List<Tenant> subTenants, Property leasedProperty, String period, Date contractDate, double rentingFee, String status){
         for(RentalAgreement agreement : rentalAgreements){
             if(agreement.getId() == agreementId){
                 agreement.updateAgreement(mainTenant, subTenants, leasedProperty, period, contractDate, rentingFee, status);
             }
         }
-    };
+    }
+
     public void deleteAgreement(int agreementId){
         for(int i = 0; i < rentalAgreements.size(); i++){
             if(rentalAgreements.get(i).getId() == agreementId){
@@ -29,28 +29,32 @@ public class RentalManagerImp implements RentalManager{
                 break;
             }
         }
-    };
-    public List<RentalAgreement> getAllAgreement(){
+    }
+
+    public List<RentalAgreement> getAllAgreements(){
         return rentalAgreements;
-    };
-    public List<RentalAgreement> getAgreementByOnwerName(String ownerName){
+    }
+
+    public List<RentalAgreement> getAgreementsByOwnerName(String ownerName){
         for(Owner owner : owners){
             if(Objects.equals(owner.getFullName(), ownerName)){
                 return owner.getRentalAgreements();
             }
         }
-        return null;
-    };
-    public List<RentalAgreement> getAgreementByPropertyAdress(String propertyAdress){
-        List<RentalAgreement> agreementsByPropertyAdress = new ArrayList<>();
+        return Collections.emptyList();
+    }
+
+    public List<RentalAgreement> getAgreementsByPropertyAddress(String propertyAddress){
+        List<RentalAgreement> agreementsByPropertyAddress = new ArrayList<>();
         for(RentalAgreement agreement: rentalAgreements){
-            if(Objects.equals(agreement.getProperty().getAddress(), propertyAdress)){
-                agreementsByPropertyAdress.add(agreement);
+            if(Objects.equals(agreement.getProperty().getAddress(), propertyAddress)){
+                agreementsByPropertyAddress.add(agreement);
             }
         }
-        return agreementsByPropertyAdress;
-    };
-    public List<RentalAgreement> getAgreementByStatus(String status){
+        return agreementsByPropertyAddress;
+    }
+
+    public List<RentalAgreement> getAgreementsByStatus(String status){
         List<RentalAgreement> agreementsByStatus = new ArrayList<>();
         for(RentalAgreement agreement: rentalAgreements){
             if(Objects.equals(agreement.getProperty().getAddress(), status)){
@@ -58,11 +62,26 @@ public class RentalManagerImp implements RentalManager{
             }
         }
         return agreementsByStatus;
-    };
+    }
 
-    public List<Tenant> getAllTenant() {return tenants;};
-    public List<Host> getAllHost() {return hosts;};
-    public List<Owner> getAllOwner() {return owners;};
-    public List<ResidentialProperty> getAllResidentialProperty() {return residentialProperties;};
-    public List<CommercialProperty> getAllCommercialProperty() { return commercialProperties;};
+    public List<RentalAgreement> sortReport(List<RentalAgreement> agreements, String sortType){
+        switch (sortType) {
+            case "status":
+                agreements.sort(Comparator.comparing(RentalAgreement::getStatus));
+                break;
+            case "contractDate":
+                agreements.sort(Comparator.comparing(RentalAgreement::getContractDate));
+                break;
+            case "period":
+                agreements.sort(Comparator.comparing(RentalAgreement::getPeriod));
+                break;
+        }
+        return agreements;
+    }
+
+    public List<Tenant> getAllTenants() {return tenants;}
+    public List<Host> getAllHosts() {return hosts;}
+    public List<Owner> getAllOwners() {return owners;}
+    public List<ResidentialProperty> getAllResidentialProperties() {return residentialProperties;}
+    public List<CommercialProperty> getAllCommercialProperties() { return commercialProperties;}
 }
