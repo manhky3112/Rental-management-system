@@ -2,9 +2,10 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-class Host extends Person {
+public class Host extends Person {
     private List<Property> ManagedProperties;
     private List<Owner> cooperatingOwners;
+    private List<RentalAgreement> rentalAgreements;
 
     public Host(int id, String fullName, Date dateOfBirth, String contactInfo) {
         super(id, fullName, dateOfBirth, contactInfo);
@@ -14,6 +15,7 @@ class Host extends Person {
 
     public List<Property> getProperties() { return ManagedProperties; }
     public List<Owner> getCooperatingOwners() { return cooperatingOwners; }
+    public List<RentalAgreement> getRentalAgreements() {return rentalAgreements;}
 
     public void addProperty(Property property) {
         ManagedProperties.add(property);
@@ -21,5 +23,9 @@ class Host extends Person {
 
     public void addOwner(Owner owner) {
         cooperatingOwners.add(owner);
+    }
+
+    public void addRentalAgreement(RentalAgreement agreement) {
+        rentalAgreements.add(agreement);
     }
 }

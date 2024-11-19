@@ -2,7 +2,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.ArrayList;
 
-class Tenant extends Person {
+public class Tenant extends Person {
     private List<RentalAgreement> rentalAgreements;
     private List<Payment> paymentTransactions;
 

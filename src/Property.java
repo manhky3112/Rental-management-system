@@ -1,7 +1,7 @@
 import java.util.List;
 import java.util.ArrayList;
 
-abstract class Property {
+public abstract class Property {
     private int propertyId;
     private String address;
     private double pricing;

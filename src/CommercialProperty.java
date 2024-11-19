@@ -1,4 +1,4 @@
-class CommercialProperty extends Property {
+public class CommercialProperty extends Property {
     private String businessType;
     private int parkingSpaces;
     private double squareFootage;
