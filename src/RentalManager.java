@@ -2,6 +2,8 @@ import java.util.Date;
 import java.util.List;
 
 public interface RentalManager {
+    void initializeData(String filePath, String dataType);
+
     void addAgreement(RentalAgreement agreement);
     void updateAgreement(int agreementId, Tenant mainTenant, List<Tenant> subTenants, Property leasedProperty, String period, Date contractDate, double rentingFee, String status);
     void deleteAgreement(int agreementId);

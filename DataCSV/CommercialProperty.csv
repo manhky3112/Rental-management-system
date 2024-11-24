@@ -1,0 +1,16 @@
+propertyId,address,pricing,status,owner,hosts,businessType,parkingSpaces,squareFootage
+1,123 Business St,3000,Active,1,14;15,Retail,10,5000
+2,456 Commerce St,3200,New,2,13;14,Restaurant,8,6000
+3,789 Industrial Rd,3400,Completed,3,12;13,Office,15,7000
+4,135 Corporate Ln,3600,Active,4,12;13,Warehouse,20,8000
+5,246 Enterprise Ave,3800,New,5,11;12,Gym,12,9000
+6,357 Market Blvd,4000,Active,6,10;11,Cafe,14,4500
+7,468 Trade Cir,4200,Completed,7,9;10,Factory,18,8500
+8,579 Retail Plz,4400,New,8,8;9,Salon,6,5000
+9,680 Business Pk,4600,Active,9,7;8,Hotel,25,12000
+10,791 Industry Dr,4800,Completed,10,6;7,Supermarket,30,15000
+11,123 Commerce Ave,5000,New,11,5;6,Pharmacy,16,5500
+12,456 Trade Pk,5200,Active,12,4;5,Restaurant,8,5000
+13,789 Retail Blvd,5400,New,13,3;4,Office,10,6000
+14,135 Corporate Blvd,5600,Completed,14,2;3,Warehouse,18,9000
+15,246 Enterprise Dr,5800,New,15,1;2,Factory,20,10000

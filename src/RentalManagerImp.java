@@ -1,3 +1,4 @@
+import javax.xml.crypto.Data;
 import java.util.*;
 
 public class RentalManagerImp implements RentalManager{
@@ -7,7 +8,43 @@ public class RentalManagerImp implements RentalManager{
     private List<Owner> owners = new ArrayList<>();
     private List<ResidentialProperty> residentialProperties = new ArrayList<>();
     private List<CommercialProperty> commercialProperties = new ArrayList<>();
+    private List<Payment> payments = new ArrayList<>();
 
+    public void initializeData(String filePath, String dataType){
+        switch (dataType) {
+            case "Payment":
+                payments = DataPopulator.populatePayments(filePath);
+                break;
+            case "Tenant":
+                tenants = DataPopulator.populateTenants(filePath);
+                break;
+            case "Host":
+                hosts = DataPopulator.populateHosts(filePath);
+                break;
+            case "Owner":
+                owners = DataPopulator.populateOwners(filePath);
+                break;
+            case "ResidentialProperty":
+                residentialProperties = DataPopulator.populateResidentials(filePath);
+                break;
+            case "CommercialProperty":
+                commercialProperties = DataPopulator.populateCommercials(filePath);
+                break;
+            case "RentalAgreement":
+                rentalAgreements = DataPopulator.populateAgreements(filePath);
+                break;
+            case "TenantRemaining":
+                DataPopulator.finalizeTenants(filePath);
+                break;
+            case "HostRemaining":
+                DataPopulator.finalizeHosts(filePath);
+                break;
+            case "OwnerRemaining":
+                DataPopulator.finalizeOwners(filePath);
+                break;
+            default:
+        }
+    }
 
     public void addAgreement(RentalAgreement agreement) {
         rentalAgreements.add(agreement);
@@ -53,7 +90,7 @@ public class RentalManagerImp implements RentalManager{
         }
         return agreementsByPropertyAddress;
     }
-
+    
     public List<RentalAgreement> getAgreementsByStatus(String status){
         List<RentalAgreement> agreementsByStatus = new ArrayList<>();
         for(RentalAgreement agreement: rentalAgreements){

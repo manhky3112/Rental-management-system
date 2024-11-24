@@ -1,0 +1,16 @@
+propertyId,address,pricing,status,owner,hosts,numBedrooms,hasGarden,isPetFriendly
+1,123 Elm St,1200,Active,1,2;3,3,TRUE,TRUE
+2,456 Oak St,1300,New,1,2;3,2,FALSE,TRUE
+3,789 Pine St,1400,Active,2,4;5,4,TRUE,FALSE
+4,135 Maple St,1500,Completed,2,4;5,5,FALSE,FALSE
+5,246 Birch St,1600,New,3,6;7,3,TRUE,TRUE
+6,357 Cedar St,1700,Active,3,6;7,2,FALSE,TRUE
+7,468 Redwood St,1800,Completed,4,8;9,4,TRUE,FALSE
+8,579 Fir St,1900,New,4,8;9,5,FALSE,TRUE
+9,680 Spruce St,2000,Active,5,10;11,3,TRUE,TRUE
+10,791 Walnut St,2100,Completed,5,10;11,2,FALSE,FALSE
+11,123 Birchwood Dr,2200,New,6,12;13,4,TRUE,TRUE
+12,456 Oakwood Dr,2300,Active,6,12;13,3,FALSE,FALSE
+13,789 Pinewood Dr,2400,New,7,14;15,5,TRUE,TRUE
+14,135 Maplewood Dr,2500,Active,7,14;15,2,FALSE,TRUE
+15,246 Cedarwood Dr,2600,Completed,8,15;1,4,TRUE,FALSE

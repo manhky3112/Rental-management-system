@@ -1,0 +1,16 @@
+id,fullName,dateOfBirth,contactInfo,ownedProperties,managingHosts,rentalAgreements
+1,George Martin,11/01/1965,george.martin@email.com,1;2,1,1
+2,Susan Lee,12/15/1966,susan.lee@email.com,3;4,2,2
+3,Bill Gates,01/22/1967,bill.gates@email.com,5;6,3,3
+4,Warren Buffett,02/10/1968,warren.buffett@email.com,7;8,4,4
+5,Jeff Bezos,03/18/1969,jeff.bezos@email.com,9;10,5,5
+6,Mark Zuckerberg,04/12/1970,mark.zuckerberg@email.com,11;12,6,6
+7,Steve Jobs,05/25/1971,steve.jobs@email.com,13;14,7,7
+8,Elon Musk,06/22/1972,elon.musk@email.com,15,8,8
+9,Larry Page,07/14/1973,larry.page@email.com,1,9,9
+10,Sergey Brin,08/09/1974,sergey.brin@email.com,2,10,10
+11,Tim Cook,09/21/1975,tim.cook@email.com,3,11,11
+12,Sundar Pichai,10/18/1976,sundar.pichai@email.com,4,12,12
+13,Satya Nadella,11/15/1977,satya.nadella@email.com,5,13,13
+14,Sheryl Sandberg,12/03/1978,sheryl.sandberg@email.com,6,14,14
+15,Reed Hastings,01/01/1979,reed.hastings@email.com,7,15,15

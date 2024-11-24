@@ -1,0 +1,16 @@
+agreementId,mainTenant,subTenants,leasedProperty,period,contractDate,rentingFee,status
+1,1,2,1,Monthly,01/01/2024,1200,Active
+2,2,3,2,Weekly,02/01/2024,300,New
+3,3,4,3,Monthly,03/01/2024,1400,Active
+4,4,5,4,Daily,04/01/2024,50,Completed
+5,5,6,5,Fortnightly,05/01/2024,600,Active
+6,6,7,6,Monthly,06/01/2024,1600,New
+7,7,8,7,Weekly,07/01/2024,400,Completed
+8,8,9,8,Daily,08/01/2024,70,New
+9,9,10,9,Fortnightly,09/01/2024,800,Active
+10,10,11,10,Monthly,10/01/2024,2100,Completed
+11,11,12,11,Weekly,11/01/2024,500,Active
+12,12,13,12,Fortnightly,12/01/2024,700,New
+13,13,14,13,Daily,01/01/2025,90,Completed
+14,14,15,14,Monthly,02/01/2025,2500,Active
+15,15,1,15,Weekly,03/01/2025,700,New

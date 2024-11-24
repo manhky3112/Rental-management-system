@@ -1,0 +1,16 @@
+id,fullName,dateOfBirth,contactInfo,rentalAgreements,paymentTransactions
+1,John Doe,01/01/1990,john.doe@email.com,1,1;2
+2,Jane Smith,02/15/1991,jane.smith@email.com,2,3;4
+3,Bob Johnson,03/10/1992,bob.johnson@email.com,3,5;6
+4,Alice Davis,04/05/1993,alice.davis@email.com,4,7;8
+5,Tom Wilson,05/20/1994,tom.wilson@email.com,5,9;10
+6,Lily Evans,06/18/1995,lily.evans@email.com,6,11;12
+7,Harry Potter,07/12/1996,harry.potter@email.com,7,13;14
+8,Emma Brown,08/25/1997,emma.brown@email.com,8,15
+9,Oliver Twist,09/14/1998,oliver.twist@email.com,9,2
+10,Nancy Drew,10/22/1999,nancy.drew@email.com,10,4
+11,Charlie Bucket,11/01/2000,charlie.bucket@email.com,11,6
+12,Hermione Granger,11/15/2001,hermione.granger@email.com,12,8
+13,Ron Weasley,12/03/2002,ron.weasley@email.com,13,10
+14,Luna Lovegood,12/18/2003,luna.lovegood@email.com,14,12
+15,Ginny Weasley,01/01/2004,ginny.weasley@email.com,15,14

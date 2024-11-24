@@ -3,22 +3,23 @@ import java.util.Date;
 import java.util.List;
 
 public class Host extends Person {
-    private List<Property> ManagedProperties;
-    private List<Owner> cooperatingOwners;
-    private List<RentalAgreement> rentalAgreements;
+    private List<Property> managedProperties = new ArrayList<>();
+    private List<Owner> cooperatingOwners = new ArrayList<>();
+    private List<RentalAgreement> rentalAgreements = new ArrayList<>();
 
-    public Host(int id, String fullName, Date dateOfBirth, String contactInfo) {
+    public Host(int id, String fullName, Date dateOfBirth, String contactInfo, List<Property> managedProperties, List<Owner> cooperatingOwners, List<RentalAgreement> rentalAgreements) {
         super(id, fullName, dateOfBirth, contactInfo);
-        this.ManagedProperties = new ArrayList<>();
-        this.cooperatingOwners = new ArrayList<>();
+        this.managedProperties = managedProperties;
+        this.cooperatingOwners = cooperatingOwners;
+        this.rentalAgreements = rentalAgreements;
     }
 
-    public List<Property> getProperties() { return ManagedProperties; }
+    public List<Property> getProperties() { return managedProperties; }
     public List<Owner> getCooperatingOwners() { return cooperatingOwners; }
     public List<RentalAgreement> getRentalAgreements() {return rentalAgreements;}
 
     public void addProperty(Property property) {
-        ManagedProperties.add(property);
+        managedProperties.add(property);
     }
 
     public void addOwner(Owner owner) {

@@ -5,7 +5,7 @@ import java.util.List;
 public class RentalAgreement {
     private int agreementId;
     private Tenant mainTenant;
-    private List<Tenant> subTenants;
+    private List<Tenant> subTenants = new ArrayList<>();
     private Property leasedProperty;
     private String period; // daily, weekly, fortnightly, monthly
     private Date contractDate;

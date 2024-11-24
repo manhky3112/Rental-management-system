@@ -1,0 +1,16 @@
+paymentId,amount,date,paymentMethod
+1,1500,01/01/2024,Credit Card
+2,2000,02/15/2024,PayPal
+3,1800,03/10/2024,Debit Card
+4,2100,04/05/2024,Wire Transfer
+5,2200,05/20/2024,Check
+6,1600,06/18/2024,Cash
+7,2300,07/12/2024,Credit Card
+8,2400,08/25/2024,PayPal
+9,2500,09/14/2024,Debit Card
+10,1700,10/22/2024,Wire Transfer
+11,2600,11/01/2024,Check
+12,1900,11/15/2024,Cash
+13,2700,12/03/2024,Credit Card
+14,2800,12/18/2024,PayPal
+15,3000,01/01/2025,Debit Card

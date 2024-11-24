@@ -3,14 +3,15 @@ import java.util.Date;
 import java.util.List;
 
 public class Owner extends Person {
-    private List<Property> ownedProperties;
-    private List<Host> managingHosts;
-    private List<RentalAgreement> rentalAgreements;
+    private List<Property> ownedProperties = new ArrayList<>();
+    private List<Host> managingHosts = new ArrayList<>();
+    private List<RentalAgreement> rentalAgreements = new ArrayList<>();
 
-    public Owner(int id, String fullName, Date dateOfBirth, String contactInfo) {
+    public Owner(int id, String fullName, Date dateOfBirth, String contactInfo, List<Property> ownedProperties, List<Host> managingHosts, List<RentalAgreement> rentalAgreements) {
         super(id, fullName, dateOfBirth, contactInfo);
-        this.ownedProperties = new ArrayList<>();
-        this.managingHosts = new ArrayList<>();
+        this.ownedProperties = ownedProperties;
+        this.managingHosts = managingHosts;
+        this.rentalAgreements = rentalAgreements;
     }
 
     public List<Property> getOwnedProperties() { return ownedProperties; }

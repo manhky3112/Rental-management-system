@@ -3,13 +3,13 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class Tenant extends Person {
-    private List<RentalAgreement> rentalAgreements;
-    private List<Payment> paymentTransactions;
+    private List<RentalAgreement> rentalAgreements = new ArrayList<>();
+    private List<Payment> paymentTransactions = new ArrayList<>();
 
-    public Tenant(int id, String fullName, Date dateOfBirth, String contactInfo) {
+    public Tenant(int id, String fullName, Date dateOfBirth, String contactInfo, List<RentalAgreement> rentalAgreements, List<Payment> paymentTransactions) {
         super(id, fullName, dateOfBirth, contactInfo);
-        this.rentalAgreements = new ArrayList<>();
-        this.paymentTransactions = new ArrayList<>();
+        this.rentalAgreements = rentalAgreements;
+        this.paymentTransactions = paymentTransactions;
     }
 
     public List<RentalAgreement> getRentalAgreements() { return rentalAgreements; }

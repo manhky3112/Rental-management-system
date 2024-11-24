@@ -1,0 +1,16 @@
+id,fullName,dateOfBirth,contactInfo,managedProperties,cooperatingOwners,rentalAgreements
+1,David Wallace,04/12/1980,david.wallace@email.com,1;2,1;2,1;2
+2,Micheal Scott,05/22/1981,michael.scott@email.com,3;4,3;4,3;4
+3,Pam Beesly,06/30/1982,pam.beesly@email.com,5;6,5;6,5;6
+4,Dwight Schrute,07/15/1983,dwight.schrute@email.com,7;8,7;8,7;8
+5,Jim Halpert,08/25/1984,jim.halpert@email.com,9;10,9;10,9;10
+6,Stanley Hudson,09/05/1985,stanley.hudson@email.com,11;12,11;12,11;12
+7,Kevin Malone,10/15/1986,kevin.malone@email.com,13;14,13;14,13;14
+8,Angela Martin,11/05/1987,angela.martin@email.com,15,15,15
+9,Oscar Martinez,12/15/1988,oscar.martinez@email.com,1,1,1
+10,Phyllis Vance,01/10/1989,phyllis.vance@email.com,2,2,2
+11,Ryan Howard,02/15/1990,ryan.howard@email.com,3,3,3
+12,Kelly Kapoor,03/10/1991,kelly.kapoor@email.com,4,4,4
+13,Creed Bratton,04/05/1992,creed.bratton@email.com,5,5,5
+14,Andy Bernard,05/20/1993,andy.bernard@email.com,6,6,6
+15,Erin Hannon,06/18/1994,erin.hannon@email.com,7,7,7

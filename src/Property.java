@@ -9,13 +9,13 @@ public abstract class Property {
     private Owner owner;
     private List<Host> hosts;
 
-    public Property(int propertyId, String address, double pricing, String status, Owner owner) {
+    public Property(int propertyId, String address, double pricing, String status, Owner owner, List<Host> hosts) {
         this.propertyId = propertyId;
         this.address = address;
         this.pricing = pricing;
         this.status = status;
         this.owner = owner;
-        this.hosts = new ArrayList<>();
+        this.hosts = hosts;
     }
 
     public int getPropertyId() { return propertyId; }
