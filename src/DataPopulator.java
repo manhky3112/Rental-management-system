@@ -192,6 +192,7 @@ public class DataPopulator {
                     Double.parseDouble(row[8])
             );
             commercialProperties.add(property);
+            commercialMap.put(Integer.parseInt(row[0]), property);
         }
         return commercialProperties;
     }

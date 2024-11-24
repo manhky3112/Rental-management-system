@@ -61,7 +61,7 @@ public class RentalManagerImp implements RentalManager{
     public void deleteAgreement(int agreementId){
         for(int i = 0; i < rentalAgreements.size(); i++){
             if(rentalAgreements.get(i).getId() == agreementId){
-                System.out.println("Rental agreement ID" + rentalAgreements.get(i).getId() + "remove successfully" );
+                System.out.println("Rental agreement ID " + rentalAgreements.get(i).getId() + " remove successfully" );
                 rentalAgreements.remove(i);
                 break;
             }
@@ -94,7 +94,7 @@ public class RentalManagerImp implements RentalManager{
     public List<RentalAgreement> getAgreementsByStatus(String status){
         List<RentalAgreement> agreementsByStatus = new ArrayList<>();
         for(RentalAgreement agreement: rentalAgreements){
-            if(Objects.equals(agreement.getProperty().getAddress(), status)){
+            if(Objects.equals(agreement.getStatus(), status)){
                 agreementsByStatus.add(agreement);
             }
         }
@@ -103,13 +103,13 @@ public class RentalManagerImp implements RentalManager{
 
     public List<RentalAgreement> sortReport(List<RentalAgreement> agreements, String sortType){
         switch (sortType) {
-            case "status":
+            case "Status":
                 agreements.sort(Comparator.comparing(RentalAgreement::getStatus));
                 break;
-            case "contractDate":
+            case "Contract Date":
                 agreements.sort(Comparator.comparing(RentalAgreement::getContractDate));
                 break;
-            case "period":
+            case "Period":
                 agreements.sort(Comparator.comparing(RentalAgreement::getPeriod));
                 break;
         }
