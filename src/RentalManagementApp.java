@@ -1,4 +1,6 @@
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
@@ -74,6 +76,7 @@ public class RentalManagementApp {
         int lineLength = 40;
         int menu = 1;
         String sortType = "Status";
+        int agreementId = 0;
         while (true) {
             if(menu == 1){
                 System.out.println("\n==========WELCOME TO RENTAL MANAGEMENT APP===========\n");
@@ -112,7 +115,6 @@ public class RentalManagementApp {
                 scanner.nextLine();
 
                 List<RentalAgreement> agreements;
-                int agreementId;
                 switch (choice) {
                     case 1:
                         sortType = sortChoice();
@@ -156,11 +158,13 @@ public class RentalManagementApp {
                         showAgreementsDetail(agreements);
                         break;
                     case 5:
-                        System.out.print("\nEnter Host Full Name: ");
+
                         break;
                     case 6:
                         System.out.print("\nEnter Rental Agreement ID you want to update: ");
                         agreementId = scanner.nextInt();
+
+                        menu = 4;
                         break;
                     case 7:
                         System.out.print("\nEnter Rental Agreement ID you want to delete: ");
@@ -382,6 +386,75 @@ public class RentalManagementApp {
                         break;
                     case 6:
                         menu = 1;
+                        break;
+                    default:
+                        System.out.println("Invalid choice, please try again.");
+                }
+            }else if(menu == 4){
+                System.out.println("\n----------UPDATE AGREEMENT ID " + agreementId + "-----------");
+                System.out.println("1. Change Main Tenant");
+                System.out.println("2. Add Sub Tenants");
+                System.out.println("3. Remove Sub Tenants");
+                System.out.println("4. Change Leased Property");
+                System.out.println("5. Change Period");
+                System.out.println("6. Change Contract Date");
+                System.out.println("7. Change Renting Fee");
+                System.out.println("8. Change Status");
+                System.out.println("9. Exit");
+                System.out.print("Enter your choice: ");
+                int choice = scanner.nextInt();
+                scanner.nextLine();
+
+                List<RentalAgreement> agreements;
+                int tenantId;
+                switch (choice) {
+                    case 1:
+                        System.out.print("\nEnter new Main Tenant ID: ");
+                        tenantId = scanner.nextInt();
+                        rentalManager.updateAgreement(agreementId, tenantId, "Main Tenant");
+                        break;
+                    case 2:
+                        System.out.print("\nEnter Sub Tenant ID you want to add: ");
+                        tenantId = scanner.nextInt();
+                        rentalManager.updateAgreement(agreementId, tenantId, "Add Sub Tenant");
+                        break;
+                    case 3:
+                        System.out.print("\nEnter Sub Tenant ID you want to remove: ");
+                        tenantId = scanner.nextInt();
+                        rentalManager.updateAgreement(agreementId, tenantId, "Remove Sub Tenant");
+                        break;
+                    case 4:
+                        System.out.print("\nEnter new Property ID: ");
+                        int propertyId = scanner.nextInt();
+                        rentalManager.updateAgreement(agreementId, propertyId, "Property");
+                        break;
+                    case 5:
+                        System.out.print("\nEnter new period: ");
+                        String period = scanner.nextLine();
+                        rentalManager.updateAgreement(agreementId, period, "Period");
+                        break;
+                    case 6:
+                        System.out.print("\nEnter new Contract Date (MM/dd/yyyy): ");
+                        Date contractDate = null;
+                        try{
+                        contractDate = new SimpleDateFormat("MM/dd/yyyy").parse(scanner.nextLine());
+                        } catch (ParseException e) {
+                            e.printStackTrace();
+                        }
+                        rentalManager.updateAgreement(agreementId, contractDate, "Contract Date");
+                        break;
+                    case 7:
+                        System.out.print("\nEnter new Renting Fee: ");
+                        Double rentingFee = scanner.nextDouble();
+                        rentalManager.updateAgreement(agreementId, rentingFee, "Renting Fee");
+                        break;
+                    case 8:
+                        System.out.print("\nEnter new Status: ");
+                        String status = scanner.nextLine();
+                        rentalManager.updateAgreement(agreementId, status, "Status");
+                        break;
+                    case 9:
+                        menu = 2;
                         break;
                     default:
                         System.out.println("Invalid choice, please try again.");

@@ -5,7 +5,7 @@ public interface RentalManager {
     void initializeData(String filePath, String dataType);
 
     void addAgreement(RentalAgreement agreement);
-    void updateAgreement(int agreementId, Tenant mainTenant, List<Tenant> subTenants, Property leasedProperty, String period, Date contractDate, double rentingFee, String status);
+    void updateAgreement(int agreementId, Object update, String updateChoice);
     void deleteAgreement(int agreementId);
     List<RentalAgreement> getAllAgreements();
     List<RentalAgreement> getAgreementsByOwnerName(String ownerName);

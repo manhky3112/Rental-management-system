@@ -1,4 +1,4 @@
-import javax.xml.crypto.Data;
+
 import java.util.*;
 
 public class RentalManagerImp implements RentalManager{
@@ -50,11 +50,80 @@ public class RentalManagerImp implements RentalManager{
         rentalAgreements.add(agreement);
     }
 
-    public void updateAgreement(int agreementId, Tenant mainTenant, List<Tenant> subTenants, Property leasedProperty, String period, Date contractDate, double rentingFee, String status){
+    public void updateAgreement(int agreementId, Object update, String updateChoice){
+        RentalAgreement editAgreement = null;
         for(RentalAgreement agreement : rentalAgreements){
             if(agreement.getId() == agreementId){
-                agreement.updateAgreement(mainTenant, subTenants, leasedProperty, period, contractDate, rentingFee, status);
+                editAgreement = agreement;
+                break;
             }
+        }
+        switch (updateChoice) {
+            case "Main Tenant":
+                if (update instanceof Integer tenantId) {
+                    for (Tenant tenant : tenants) {
+                        if (tenant.getId() == tenantId) {
+                            assert editAgreement != null;
+                            editAgreement.updateMainTenant(tenant);
+                            break;
+                        }
+                    }
+                }
+                break;
+            case "Add Sub Tenant":
+                if (update instanceof Integer tenantId) {
+                    for (Tenant tenant : tenants) {
+                        if (tenant.getId() == tenantId) {
+                            assert editAgreement != null;
+                            editAgreement.addSubTenant(tenant);
+                            break;
+                        }
+                    }
+                }
+                break;
+            case "Remove Sub Tenant":
+                if (update instanceof Integer tenantId) {
+                    assert editAgreement != null;
+                    editAgreement.removeSubTenant(tenantId);
+                }
+                break;
+            case "Property":
+                if (update instanceof Integer) {
+                    int propertyId = (Integer) update;
+                    for (CommercialProperty commercialProperty : commercialProperties) {
+                        if (commercialProperty.getPropertyId() == propertyId) {
+                            assert editAgreement != null;
+                            editAgreement.updateProperty(commercialProperty);
+                            break;
+                        }
+                    }
+                }
+                break;
+            case "Period":
+                if (update instanceof String period) {
+                    assert editAgreement != null;
+                    editAgreement.updatePeriod(period);
+                }
+                break;
+            case "Contract Date":
+                if (update instanceof Date contractDate) {
+                    assert editAgreement != null;
+                    editAgreement.updateContractDate(contractDate);
+                }
+                break;
+            case "Renting Fee":
+                if (update instanceof Double rentingFee) {
+                    assert editAgreement != null;
+                    editAgreement.updateRentingFee(rentingFee);
+                }
+                break;
+            case "Status":
+                if (update instanceof String status) {
+                    assert editAgreement != null;
+                    editAgreement.updateStatus(status);
+                }
+                break;
+            default:
         }
     }
 
